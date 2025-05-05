@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meme Requests</title>
+      
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/images/spx-favicon.png">
+      
+        <link rel="stylesheet" href="css/styles.css">
+      </head>
+<body>
+    <header>
+        <img id="logo" src="spx-logo-nobg.png" alt="Meme Request Logo">
+        <nav>
+            <ul id="menu" class="menu">
+                <li><a href="#meme-request">Meme Requests</a></li>
+                <li><a href="#my-requests">My Requests</a></li>
+                <button id="connect-wallet">Connect Wallet</button>
+            </ul>
+            <div id="hamburger" class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div id="wallet-modal" class="wallet-modal hidden">
+        <div class="wallet-modal__content">
+          <h2>Connect Your Wallet</h2>
+          <button id="connect-metamask-btn" class="wallet-btn">MetaMask</button>
+          <button id="connect-phantom-btn" class="wallet-btn">Phantom</button>
+          <button id="close-wallet-modal" class="wallet-modal__close">Cancel</button>
+        </div>
+      </div>
+    
+
+    <section id="landing">
+        <div class="intro">
+            <h1>Meme Requests</h1>
+            <p>Submit your meme ideas and track your requests. Easily manage your projects with crypto wallet login.</p>
+            <a href="#meme-request"><button>Submit a Request</button></a> <!-- Correct button link -->
+        </div>
+        <div id="floating-memes"></div> <!-- This is where memes will float -->
+    </section>
+
+    <section id="meme-request">
+        <h2>Submit Your Meme Request</h2>
+        <form id="meme-form">
+            <label for="meme-description">Meme Description:</label>
+            <textarea id="meme-description" name="description" placeholder="Describe your meme idea..."></textarea>
+
+            <label for="meme-file">Upload Files or Links:</label>
+            <input type="file" id="meme-file" name="file" accept="image/*">
+            <input type="url" id="meme-link" name="reference-link" placeholder="Reference link for meme">
+
+            <label for="meme-type">Meme Type:</label>
+            <select id="meme-type" name="type">
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+                <option value="gif">GIF</option>
+            </select>
+
+            <label for="meme-format">Meme Format:</label>
+            <select id="meme-format" name="format">
+                <option value="square">Square</option>
+                <option value="landscape">Landscape</option>
+                <option value="portrait">Portrait</option>
+            </select>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <section id="my-requests">
+        <h2>My Requests</h2>
+        <div class="requests-list">
+            <!-- Dynamic content will be loaded here via JavaScript -->
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Donations (EVM)</p>
+        <p>0xEEC1078Fa1769dC0138a2842f7BE0F739EcB4210</p>
+    </footer>
+
+    <script src="js/app.js"></script> <!-- Link to the JS file -->
+</body>
+</html>

@@ -1,0 +1,518 @@
+/* General Reset */
+#logo {
+    height: 50px; /* Adjust this size to your preference */
+    width: auto;
+}
+
+/* Wallet Modal Overlay */
+.wallet-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  /* Hide by default */
+  .wallet-modal.hidden {
+    display: none;
+  }
+  /* Modal Box */
+  .wallet-modal__content {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 320px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .wallet-modal__content h2 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  /* Buttons */
+  .wallet-btn {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .wallet-btn:hover {
+    background-color: #e65c4f;
+  }
+  /* Close Button */
+  .wallet-modal__close {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .wallet-modal__close:hover {
+    color: white;
+  }
+  
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #121212; /* Dark background color */
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Landing Section */
+#landing {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 80px; /* Avoid header overlap */
+    overflow: hidden;
+}
+
+/* Intro text section */
+#landing .intro {
+    z-index: 1; /* Ensure content is above the floating memes */
+    color: white;
+    position: relative; /* To position the pseudo-element correctly */
+    padding: 20px; /* Add some padding around the text */
+}
+
+/* Pseudo-element for blurred background */
+#landing .intro::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(8px); /* Apply blur to the background */
+    z-index: -1; /* Ensure the blur is behind the text */
+    border-radius: 20px; /* More rounded corners for the blur */
+}
+
+/* Title */
+#landing h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: white; /* White color for the heading */
+    text-shadow: 0 0 10px white; /* White glow on the text */
+}
+
+/* Paragraph */
+#landing p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: white; /* White color for the text */
+    text-shadow: 0 0 5px white; /* Slight white glow on the text */
+}
+
+/* Button */
+button {
+    background-color: #ff6f61;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #e65c4f; /* Darker shade for hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 20px; /* Adding button-like padding */
+    background-color: #333; /* Button background */
+    border-radius: 5px; /* Rounded corners for the buttons */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #ff6f61; /* Hover effect for the buttons */
+    color: white;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* General Reset */
+#logo {
+    height: 50px; /* Adjust this size to your preference */
+    width: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #121212; /* Dark background color */
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 20px; /* Adding button-like padding */
+    background-color: #333; /* Button background */
+    border-radius: 5px; /* Rounded corners for the buttons */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #ff6f61; /* Hover effect for the buttons */
+    color: white;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+    display: none; /* Hide hamburger by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+#menu {
+    display: flex;
+    gap: 25px;
+}
+
+/* Mobile view - Hide the regular menu and show the hamburger menu */
+@media (max-width: 768px) {
+    #menu {
+        display: none; /* Hide menu on mobile */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 80px; /* Position the menu under the header */
+        background-color: #1a1a1a;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        left: 0; /* Ensure the menu stays within the screen */
+        z-index: 10;
+    }
+
+    #hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    #menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+}
+
+
+/* Mobile view - Hide the regular menu and show the hamburger menu */
+@media (max-width: 768px) {
+    #menu {
+        display: none; /* Hide menu on mobile */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 80px; /* Position the menu under the header */
+        background-color: #1a1a1a;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    #menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+}
+
+
+
+/* Floating Meme Background */
+#floating-memes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Makes sure it won't interfere with clicks */
+    z-index: 0; /* Ensure it’s behind the content */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure memes stay within the bounds */
+    padding: 20px; /* Add padding to keep the grid from touching the edges */
+}
+
+.meme-item {
+    width: 150px; /* Larger size */
+    height: 150px; /* Larger size */
+    margin: 20px; /* Spacing between images in grid */
+    border-radius: 10px;
+    opacity: 0.8;
+    position: relative;
+    animation: moveInGrid 15s ease-in-out infinite; /* Grid movement animation */
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4); /* White glow effect with 0.4 strength */
+}
+
+.meme-item:hover {
+    transform: scale(1.1);
+}
+
+/* Grid-like movement */
+@keyframes moveInGrid {
+    0% {
+        transform: translateX(0) translateY(0); /* Start at grid position */
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateX(200px) translateY(0); /* Move right */
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(200px) translateY(200px); /* Move down-right */
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateX(0) translateY(200px); /* Move down */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) translateY(0); /* Move back to start */
+        opacity: 0.8;
+    }
+}
+
+/* Meme Request Section */
+#meme-request {
+    background-color: #222;
+    padding: 50px 20px;
+}
+
+#meme-request h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white; /* White color for heading */
+    margin-bottom: 40px;
+}
+
+/* Form Elements */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+textarea, input[type="file"], input[type="url"], select {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #555;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+textarea:focus, input[type="file"]:focus, input[type="url"]:focus, select:focus {
+    border-color: #ff6f61;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #e65c4f;
+}
+
+/* My Requests Section */
+#my-requests {
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+#my-requests h2 {
+    color: white; /* White color for heading */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Previous Work Section */
+#previous-work {
+    padding: 50px 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+#previous-work h2 {
+    font-size: 2.5rem;
+    color: white; /* White color for heading */
+    margin-bottom: 40px;
+}
+
+.work-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.work-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center; /* Center align links */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add some spacing between the links */
+    }
+
+    #landing h1 {
+        font-size: 2.5rem; /* Reduce heading size on smaller screens */
+    }
+
+    #landing p {
+        font-size: 1rem; /* Reduce paragraph size on smaller screens */
+    }
+
+    #floating-memes {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .meme-item {
+        width: 120px; /* Adjust meme image size */
+        height: 120px; /* Adjust meme image size */
+    }
+}
