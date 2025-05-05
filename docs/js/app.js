@@ -1,4 +1,8 @@
-// public/js/app.js
+// docs/js/app.js
+
+// Point to your live Railway backend
+const API = 'https://meme-requests-production.up.railway.app';
+
 document.addEventListener('DOMContentLoaded', () => {
   // === Floating Memes ===
   const memeFolder = 'memes/';
@@ -27,24 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // === Wallet Connect Modal Elements ===
-  const walletModal       = document.getElementById('wallet-modal');
-  const connectWalletBtn  = document.getElementById('connect-wallet');
-  const closeModalBtn     = document.getElementById('close-wallet-modal');
-  const metamaskBtn       = document.getElementById('connect-metamask-btn');
-  const phantomBtn        = document.getElementById('connect-phantom-btn');
-  let userAddress         = '';
+  const walletModal      = document.getElementById('wallet-modal');
+  const connectWalletBtn = document.getElementById('connect-wallet');
+  const closeModalBtn    = document.getElementById('close-wallet-modal');
+  const metamaskBtn      = document.getElementById('connect-metamask-btn');
+  const phantomBtn       = document.getElementById('connect-phantom-btn');
+  let userAddress        = '';
 
-  // Show the modal when "Connect Wallet" is clicked
+  // Show the modal
   connectWalletBtn.addEventListener('click', () => {
     walletModal.classList.remove('hidden');
   });
 
-  // Hide the modal when "Cancel" is clicked
+  // Hide the modal
   closeModalBtn.addEventListener('click', () => {
     walletModal.classList.add('hidden');
   });
 
-  // MetaMask connect flow
+  // MetaMask connect
   metamaskBtn.addEventListener('click', async () => {
     if (!window.ethereum) {
       alert('Please install MetaMask!');
@@ -61,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Phantom (Solana) connect flow
+  // Phantom connect
   phantomBtn.addEventListener('click', async () => {
     if (!(window.solana && window.solana.isPhantom)) {
       alert('Please install Phantom Wallet!');
@@ -100,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formData.append('walletAddress', userAddress);
 
     try {
-      const res = await fetch('/submit-meme', {
+      const res = await fetch(`${API}/submit-meme`, {
         method: 'POST',
         body: formData
       });
@@ -122,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadUserRequests() {
     if (!userAddress) return;
     try {
-      const res = await fetch(`/get-user-requests/${userAddress}`);
+      const res = await fetch(`${API}/get-user-requests/${userAddress}`);
       const requests = await res.json();
       const list = document.querySelector('#my-requests .requests-list');
       list.innerHTML = '';
